@@ -1,30 +1,22 @@
-# Minoca OS
+# Vinosa OS
 
-Minoca OS is a general purpose operating system written from scratch. It aims to be lean, maintainable, modular, and compatible with existing software. It features a POSIX-like interface towards application software, and a growing suite of popular packages already built and ready to go. On the backend, it contains a powerful driver model between device drivers and the kernel. The driver model enables drivers to be written in a forward compatible manner, so that kernel level components can be upgraded without necessarily requiring a recompilation of all device drivers.
+A crappy fork of Minoca. This is a joke.
 
-Minoca OS is event driven, preemptible, SMP ready, and network capable. It currently runs on x86 PCs and a range of ARM boards.
 
-### Screenshots
-![Installing Git on Minoca OS](docs/screenshots/Installing-Git.png)
-![Memory Profiler](docs/screenshots/Memory-Profiler.png)
-![Stack Profiler](docs/screenshots/Stack-Profiler.png)
 
-### Getting Started
-If you're just looking to try out Minoca OS, head over to our [download](https://www.minocacorp.com/download/) page to grab the latest stable images. The rest of this page describes how to use this repository to build your own custom image of Minoca OS.
-
-## Building Minoca OS
+## Building Vinosa
 The paragraphs below will get you from a fresh clone to a built image.
 
 ### Environment
-The Minoca OS build environment is keyed off of a few environment variables you'll need to set in order to orient the build system:
+The Vinosa OS build environment is keyed off of a few environment variables you'll need to set in order to orient the build system:
  - `SRCROOT` - Contains the absolute path to the base source directory. This respository is expected to be in a directory called `os` inside `SRCROOT`. If the third-party or tools repositories are present, they should be in directories called `third-party` and `tools` respectively underneath `SRCROOT`. For example, if you had checked out this repository into `~/src/os`, then in your shell you'd run `export SRCROOT=~/src`.
- - `ARCH` - Contains the architecture to build Minoca OS for (aka the target architecture). Valid values are `armv6`, `armv7`, and `x86`.
+ - `ARCH` - Contains the architecture to build Vinosa OS for (aka the target architecture). Valid values are `armv6`, `armv7`, and `x86`.
  - `VARIANT` - Contains the architecture variant, if any. Leave this unset most of the time. Currently the only valid value is `q` for the `x86` architecture, which builds for the Intel Quark.
- - `DEBUG` - Describes whether to build Minoca OS for debugging or release. Valid values are `dbg` for debug or `rel` for release. We always build `dbg`.
+ - `DEBUG` - Describes whether to build Vinosa OS for debuggingS or release. Valid values are `dbg` for debug or `rel` for release. We always build `dbg`.
  - `PATH` - You'll need to have `$SRCROOT/$ARCH$VARIANT$DEBUG/tools/bin` in your path to build successfully.
 
 ### Prerequisites
-To build Minoca OS you'll need a Minoca-specific toolchain for the particular architecture you're building. Prebuilt toolchains can be found [here](https://www.minocacorp.com/download/#toolchain). If you want to build the toolchain from sources, you'll need to check out the [third-party](https://gitlab.com/minoca/third-party) repository and run "make tools" in there.
+To build Vinosa you'll need a Minoca-specific toolchain for the particular architecture you're building. Prebuilt toolchains can be found [here](https://www.minocacorp.com/download/#toolchain). If you want to build the toolchain from sources, you'll need to check out the [third-party](https://gitlab.com/minoca/third-party) repository and run "make tools" in there.
 > Note: If you want to build your own toolchain on Windows, you may find the [tools](https://gitlab.com/minoca/tools) repository helpful, as it contains a native MinGW compiler, make, and other tools needed to bootstrap a toolchain on Windows.
 
 ### Build
@@ -79,7 +71,7 @@ Below is a brief orientation of a few of the directories in the repository. Chec
    * `videocon` - Video terminal console driver
  * `images` - Recipes to create the final images for each supported platform
  * `include` - Public header files
- * `kernel` - The Minoca OS kernel
+ * `kernel` - The Vinosa OS kernel
    * `ke` - High level executive functions
    * `mm` - Memory management
    * `io` - Input/Output subsystem
@@ -113,14 +105,4 @@ Below is a brief orientation of a few of the directories in the repository. Chec
 Submissions are welcome! See our [CONTRIBUTING.md](CONTRIBUTING.md) page for details, or our [WISHLIST](docs/WISHLIST.md) page for suggestions. Bugs can be reported here on Github.
 
 ## License
-Minoca OS is licensed to the public under the terms of the GNU General Public License, version 3. Alternate licensing options are available. Contact info@minocacorp.com if your company is interested in licensing Minoca OS. For complete licensing information, see the [LICENSE](LICENSE) file in this repository.
-
-## Contact
- * Email: minoca-dev@googlegroups.com
-   * Contact security@minocacorp.com for security related issues.
-   * Contact info@minocacorp.com for private or business inquries.
- * Website: [http://www.minocacorp.com/](http://www.minocacorp.com)
- * Github: [https://github.com/minoca](https://github.com/minoca)
- * Gitlab: [https://gitlab.com/minoca](https://gitlab.com/minoca)
- * IRC: [ircs://irc.oftc.net:6697/minoca-os](ircs://irc.oftc.net:6697/minoca-os)
-
+Vinosa OS is licensed to the public under the terms of the GNU General Public License, version 3. Alternate licensing options are available. Contact info@minocacorp.com if your company is interested in licensing Minoca OS. For complete licensing information, see the [LICENSE](LICENSE) file in this repository.
